@@ -20,10 +20,16 @@
   padding: 50px 10%;
  }
 
+ *::selection{
+  color: #fff;
+  background: var(--main-color);
+ }
+
  img{
   width: 100%;
  }
 
+ /* Navbar */
  header{
   position: fixed;
   width: 100%;
@@ -33,7 +39,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: #fff;
+  background: #ffffff;
   box-shadow: 0 4px 41px rgba(14 55 54 / 14%);
   padding: 15px 10%;
   transition: 0.2s;
@@ -46,6 +52,7 @@
 
  .logo img{
   width: 40px;
+  clip-path: circle(50% at 50% 50%);
  }
 
  .navbar{
@@ -69,4 +76,74 @@
   cursor: pointer;
   z-index: 1001;
   display: none;
+ }
+
+ /* Hero Section */
+ .hero{
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  background-color: #faf6f2;
+  gap: 1rem;
+ }
+
+ .hero-text{
+  flex:  1 1 17rem;
+ }
+
+ .hero-img{
+  flex: 1 1 17rem;
+ }
+
+ .hero-img img{
+  animation: animate 3s linear infinite;
+  clip-path: circle(50% at 50% 50%);
+ }
+
+ @keyframes animate{
+  0% {
+    transform: translate(-11px, 0);
+  }
+  50% {
+    transform: translate(-0px, -11px);
+  }
+  100% {
+    transform: translate(-11px, 0);
+  }
+ }
+
+ .hero-text span{
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--second-color);
+ }
+
+ .hero-text h1{
+  font-size: 3.5rem;
+  color: var(--main-color);
+  font-weight: bolder;
+ }
+
+ .hero-text h2{
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--second-color);
+  text-transform: uppercase;
+  margin: 0.5rem 0 1.4rem;
+ }
+
+ .btn {
+  padding: 7px 16px;
+  border: 2px solid var(--second-color);
+  border-radius: 40px;
+  color: var(--second-color);
+  font-weight: 500;
+ }
+
+ .btn:hover{
+  color: #fff;
+  background: var(--second-color);
  }
